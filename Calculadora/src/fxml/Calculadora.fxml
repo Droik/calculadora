@@ -21,5 +21,14 @@
       <Button layoutX="160.0" layoutY="191.0" mnemonicParsing="false" onAction="#divide" prefHeight="48.0" prefWidth="61.0" text="/" />
       <Button layoutX="160.0" layoutY="133.0" mnemonicParsing="false" onAction="#menos" prefHeight="48.0" prefWidth="61.0" text="-" />
       <Button layoutX="72.0" layoutY="191.0" mnemonicParsing="false" onAction="#vezes" prefHeight="48.0" prefWidth="61.0" text="*" />
+      <MenuBar prefHeight="25.0" prefWidth="304.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Historico">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
    </children>
 </AnchorPane>
