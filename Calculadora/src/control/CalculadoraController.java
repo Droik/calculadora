@@ -6,11 +6,21 @@
 package control;
 
 import java.net.URL;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+import model.Calculo;
 
 /**
  * FXML Controller class
@@ -44,6 +54,8 @@ public class CalculadoraController implements Initializable {
         result = num1 + num2;
 
         txtResultado.setText(result.toString());
+        String operacao;
+        operacao = "+";
     }
 
     @FXML
@@ -81,5 +93,21 @@ public class CalculadoraController implements Initializable {
 
         txtResultado.setText(result.toString());
     }
+    private void salvar(ActionEvent event) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("calculadora");
+        EntityManager  em = emf.createEntityManager();
+            Calculo calculadora;
+       
+            calculadora.setN1(txtN1.getText());
+            calculadora.setN2(txtN2.getText());
+            
+   
+            em.getTransaction().begin();
+            em.persist(calculadora);
+            em.getTransaction().commit();
+            
+            
+        }
+    }
     
-}
+
