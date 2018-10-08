@@ -23,7 +23,7 @@
       <Button layoutX="72.0" layoutY="191.0" mnemonicParsing="false" onAction="#vezes" prefHeight="48.0" prefWidth="61.0" text="*" />
       <MenuBar prefHeight="25.0" prefWidth="304.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Historico">
+          <Menu mnemonicParsing="false" onAction="#Historico" text="Historico">
             <items>
               <MenuItem mnemonicParsing="false" text="Close" />
             </items>

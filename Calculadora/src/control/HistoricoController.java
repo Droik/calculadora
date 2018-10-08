@@ -60,7 +60,8 @@ public class HistoricoController implements Initializable {
 
     @FXML
     private void Fechar(ActionEvent event) {
-        
+    Stage stage = (Stage) btnFechar.getScene().getWindow();
+    stage.close();    
     }
     private void listar() {
       

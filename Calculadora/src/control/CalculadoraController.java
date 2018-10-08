@@ -5,21 +5,19 @@
  */
 package control;
 
+import java.io.IOException;
 import java.net.URL;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.Query;
 import model.Calculo;
 
 /**
@@ -110,6 +108,18 @@ public class CalculadoraController implements Initializable {
             
             
         }
+
+    @FXML
+    private void Historico(ActionEvent event) throws IOException {
+        
+    FXMLLoader fxmlLoader = new FXMLLoader();
+    fxmlLoader.setLocation(getClass().getResource("/fxml/Historico.fxml"));
+    Scene scene = new Scene(fxmlLoader.load());
+    Stage stage = new Stage();
+    stage.setTitle("Historico");
+    stage.setScene(scene);
+    stage.show();
+    }
     }
     
 
