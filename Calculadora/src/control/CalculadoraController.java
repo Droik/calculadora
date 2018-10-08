@@ -103,6 +103,7 @@ public class CalculadoraController implements Initializable {
             calculo.setN1(txtN1.getText());
             calculo.setN2(txtN2.getText());
             calculo.setOperacao(operacao);
+            calculo.setResultado(txtResultado.getText());
             em.getTransaction().begin();
             em.persist(calculo);
             em.getTransaction().commit();

@@ -18,6 +18,15 @@ public class Calculo {
     private String n1;
     private String n2;
     private String operacao;
+    private String Resultado;
+
+    public String getResultado() {
+        return Resultado;
+    }
+
+    public void setResultado(String Resultado) {
+        this.Resultado = Resultado;
+    }
 
     public Integer getId() {
         return id;
