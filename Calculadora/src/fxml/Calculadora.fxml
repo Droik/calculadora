@@ -7,17 +7,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="304.0" style="-fx-background-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="control.CalculadoraController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="304.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.CalculadoraController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="280.0" layoutX="47.0" opacity="0.74" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/bolso.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="txtN1" layoutX="72.0" layoutY="190.0" />
-      <TextField fx:id="txtN2" layoutX="72.0" layoutY="245.0" />
+      <TextField fx:id="txtN1" layoutX="72.0" layoutY="59.0" />
+      <TextField fx:id="txtN2" layoutX="72.0" layoutY="99.0" />
       <TextField fx:id="txtResultado" layoutX="72.0" layoutY="344.0" />
-      <Button layoutX="117.0" layoutY="278.0" mnemonicParsing="false" text="Calcular" />
+      <Button layoutX="72.0" layoutY="133.0" mnemonicParsing="false" onAction="#soma" prefHeight="48.0" prefWidth="61.0" text="+" />
+      <Button layoutX="160.0" layoutY="191.0" mnemonicParsing="false" onAction="#divide" prefHeight="48.0" prefWidth="61.0" text="/" />
+      <Button layoutX="160.0" layoutY="133.0" mnemonicParsing="false" onAction="#menos" prefHeight="48.0" prefWidth="61.0" text="-" />
+      <Button layoutX="72.0" layoutY="191.0" mnemonicParsing="false" onAction="#vezes" prefHeight="48.0" prefWidth="61.0" text="*" />
    </children>
 </AnchorPane>
