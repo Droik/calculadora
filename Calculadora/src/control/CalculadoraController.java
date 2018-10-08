@@ -54,9 +54,7 @@ public class CalculadoraController implements Initializable {
         result = num1 + num2;
 
         txtResultado.setText(result.toString());
-        String operacao;
-        operacao = "+";
-        salvar();
+        salvar("+");
     }
 
     @FXML
@@ -69,9 +67,7 @@ public class CalculadoraController implements Initializable {
         result = num1 / num2;
 
         txtResultado.setText(result.toString());
-        String operacao;
-        operacao = "/";
-        salvar();
+        salvar("/");
     }
 
     @FXML
@@ -84,9 +80,7 @@ public class CalculadoraController implements Initializable {
         result = num1 - num2;
 
         txtResultado.setText(result.toString());
-        String operacao;
-        operacao = "-";
-        salvar();
+        salvar("-");
     }
 
     @FXML
@@ -99,18 +93,16 @@ public class CalculadoraController implements Initializable {
         result = num1 * num2;
 
         txtResultado.setText(result.toString());
-        String operacao;
-        operacao = "*";
-        salvar();
+        salvar("*");
     }
-    private void salvar() {
+    private void salvar(String operacao) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("calculadora");
         EntityManager  em = emf.createEntityManager();
             Calculo calculadora;
             Calculo calculo = new Calculo();
             calculo.setN1(txtN1.getText());
             calculo.setN2(txtN2.getText());
-            calculo.setOperacao(operacao.getText());
+            calculo.setOperacao(operacao);
             em.getTransaction().begin();
             em.persist(calculo);
             em.getTransaction().commit();
