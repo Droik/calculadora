@@ -44,7 +44,7 @@ public class HistoricoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        listar();
     }    
 
     @FXML
@@ -63,17 +63,17 @@ public class HistoricoController implements Initializable {
     Stage stage = (Stage) btnFechar.getScene().getWindow();
     stage.close();    
     }
-    private void listar() {
-      
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("calculadora");
-    EntityManager em = emf.createEntityManager();
     
-    Query query = em.createQuery("SELECT a FROM Calculadora a");
-        
-    List<Calculo> calculadora = query.getResultList();
-        
-    ObservableList oCalculo = FXCollections.observableArrayList(calculadora);
-    tbHistorico.setItems(oCalculo);  
+    private void listar() {      
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("calculadora");
+        EntityManager em = emf.createEntityManager();
+
+        Query query = em.createQuery("SELECT a FROM Calculo a");
+
+        List<Calculo> calculadora = query.getResultList();
+
+        ObservableList oCalculo = FXCollections.observableArrayList(calculadora);
+        tbHistorico.setItems(oCalculo);  
     }
     
 }

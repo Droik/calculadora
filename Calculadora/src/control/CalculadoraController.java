@@ -112,13 +112,13 @@ public class CalculadoraController implements Initializable {
     @FXML
     private void Historico(ActionEvent event) throws IOException {
         
-    FXMLLoader fxmlLoader = new FXMLLoader();
-    fxmlLoader.setLocation(getClass().getResource("/fxml/Historico.fxml"));
-    Scene scene = new Scene(fxmlLoader.load());
-    Stage stage = new Stage();
-    stage.setTitle("Historico");
-    stage.setScene(scene);
-    stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/fxml/Historico.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setTitle("Historico");
+        stage.setScene(scene);
+        stage.show();
     }
     }
     
